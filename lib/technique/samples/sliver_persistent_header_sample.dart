@@ -12,7 +12,6 @@ class _SliverPersistentHeaderSampleState
     extends State<SliverPersistentHeaderSample> {
   final _items = <String>[];
   final _controller = ScrollController();
-  final double _expandedHeight = 250;
 
   @override
   void initState() {
@@ -21,12 +20,6 @@ class _SliverPersistentHeaderSampleState
     for (int i = 0; i < 50; i++) {
       _items.add('item $i');
     }
-
-    _controller.addListener(() {
-      final divider = _expandedHeight - kToolbarHeight;
-      final ratio = _controller.position.pixels / divider;
-      logd('pixels: ${_controller.position.pixels}, ratio: $ratio');
-    });
   }
 
   @override

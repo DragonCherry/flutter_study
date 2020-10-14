@@ -1,4 +1,4 @@
-import 'package:examples/common/sliver_widget.dart';
+import 'package:sliver_widget/sliver_widget.dart';
 import 'package:flutter/material.dart';
 
 class SliverAppBarSample extends StatefulWidget {

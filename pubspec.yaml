@@ -39,6 +39,7 @@ dependencies:
   overlayer: ^0.5.0
   toolset: ^0.5.7
   text_size: ^0.5.0
+  sliver_widget: ^0.5.0
 
   # Packages to used in Widget Sample Code
 
