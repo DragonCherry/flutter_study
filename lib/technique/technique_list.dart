@@ -5,7 +5,7 @@ import '../sample_type.dart';
 
 class TechniqueList extends StatelessWidget {
   final List<String> items =
-      TechniqueSampleType.values.map((e) => stringify(e));
+      TechniqueSampleType.values.map((e) => stringify(e)).toList();
 
   @override
   Widget build(BuildContext context) {

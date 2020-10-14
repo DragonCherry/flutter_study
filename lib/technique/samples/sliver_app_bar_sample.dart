@@ -18,12 +18,6 @@ class _SliverAppBarSampleState extends State<SliverAppBarSample> {
     for (int i = 0; i < 50; i++) {
       _items.add('item $i');
     }
-
-    _controller.addListener(() {
-      // final divider = _expandedHeight - kToolbarHeight;
-      // final ratio = _controller.position.pixels / divider;
-      //log('ratio $ratio');
-    });
   }
 
   @override

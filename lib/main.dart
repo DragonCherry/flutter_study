@@ -14,6 +14,7 @@ import 'package/samples/text_size.dart';
 import 'package/samples/toolset.dart';
 import 'technique/technique_list.dart';
 import 'widget/samples/horizontal_list_sample.dart';
+import 'widget/samples/sliver_app_bar_grid_sample.dart';
 import 'widget/samples/sliver_app_bar_sample.dart';
 import 'widget/samples/sliver_persistent_header_sample.dart';
 
@@ -33,9 +34,14 @@ class ExampleApp extends StatelessWidget {
       stringify(WidgetSampleType.grid_count_sample): (_) => GridCountSample(),
       stringify(WidgetSampleType.horizontal_list_sample): (_) =>
           HorizontalListSample(),
-      stringify(WidgetSampleType.sliver_app_bar_sample): (_) =>
+
+      /* Technique List & Samples */
+      stringify(SampleCategoryType.technique): (_) => TechniqueList(),
+      stringify(TechniqueSampleType.sliver_app_bar_sample): (_) =>
           SliverAppBarSample(),
-      stringify(WidgetSampleType.sliver_persistent_header_sample): (_) =>
+      stringify(TechniqueSampleType.sliver_app_bar_grid_sample): (_) =>
+          SliverAppBarGridSample(),
+      stringify(TechniqueSampleType.sliver_persistent_header_sample): (_) =>
           SliverPersistentHeaderSample(),
 
       /* Package List & Samples */
@@ -49,9 +55,6 @@ class ExampleApp extends StatelessWidget {
 
       /* Pattern List & Samples */
       stringify(SampleCategoryType.pattern): (_) => PatternList(),
-
-      /* Technique List & Samples */
-      stringify(SampleCategoryType.technique): (_) => TechniqueList(),
     });
   }
 }
