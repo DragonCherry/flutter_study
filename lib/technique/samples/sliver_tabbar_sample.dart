@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:sliver_widget/sliver_widget.dart';
 
 class SliverTabBarSample extends StatefulWidget {
   @override
@@ -24,6 +23,8 @@ class _SliverTabBarSampleState extends State<SliverTabBarSample>
 
   @override
   Widget build(BuildContext context) {
+    final backgroundUrl = 'https://www.gstatic.com/webp/gallery/1.jpg';
+
     return Scaffold(
       body: DefaultTabController(
         length: _tabs.length,
@@ -41,9 +42,8 @@ class _SliverTabBarSampleState extends State<SliverTabBarSample>
                   expandedHeight: 250,
                   forceElevated: innerBoxIsScrolled,
                   flexibleSpace: FlexibleSpaceBar(
-                      background: Image.network(
-                          'https://www.gstatic.com/webp/gallery/1.jpg',
-                          fit: BoxFit.cover)),
+                      background:
+                          Image.network(backgroundUrl, fit: BoxFit.cover)),
                   bottom: TabBar(
                     tabs: _tabs.map((String name) => Tab(text: name)).toList(),
                   ),
