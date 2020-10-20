@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:mini_log/mini_log.dart';
+import 'package:toolset/toolset.dart';
 
 class SliverPersistentHeaderSample extends StatefulWidget {
   @override
@@ -17,27 +17,54 @@ class _SliverPersistentHeaderSampleState
   void initState() {
     super.initState();
 
-    for (int i = 0; i < 50; i++) {
+    for (int i = 0; i < 18; i++) {
       _items.add('item $i');
     }
   }
 
+  SliverPersistentHeader createHeader(final String title) {
+    return SliverPersistentHeader(
+        pinned: true,
+        delegate: CustomSliverPersistentHeaderDelegate(
+            child: Container(
+                color: Colors.blueAccent, child: Center(child: Text(title))),
+            minHeight: kToolbarHeight,
+            maxHeight: 150));
+  }
+
   @override
   Widget build(BuildContext context) {
-    final sliverPersistentHeader = SliverPersistentHeader(
-        floating: true,
-        pinned: true,
-        delegate: CustomSliverPersistentHeaderDelegate());
+    final topView = SliverGrid.count(
+        crossAxisCount: 3,
+        children: _items
+            .enumerated((i, e) => Container(
+                color: Colors.primaries[i % Colors.primaries.length],
+                child: Center(child: Text(_items[i]))))
+            .toList());
+
+    final middleView = SliverList(
+        delegate: SliverChildBuilderDelegate((context, index) {
+      return Container(
+          height: 50,
+          color: Colors.primaries[index % Colors.primaries.length],
+          child: Center(child: Text(_items[index])));
+    }, childCount: _items.length));
+
+    final bottomView = SliverGrid.count(
+        crossAxisCount: 3,
+        children: _items
+            .enumerated((i, e) => Container(
+                color: Colors.primaries[i % Colors.primaries.length],
+                child: Center(child: Text(_items[i]))))
+            .toList());
 
     final scrollView = CustomScrollView(controller: _controller, slivers: [
-      sliverPersistentHeader,
-      SliverList(
-          delegate: SliverChildBuilderDelegate((context, index) {
-        return Container(
-            height: 100,
-            color: Colors.primaries[index % Colors.primaries.length],
-            child: Center(child: Text(_items[index])));
-      }, childCount: _items.length))
+      createHeader('Top Header'),
+      topView,
+      createHeader('Middle Header'),
+      middleView,
+      createHeader('Bottom Header'),
+      bottomView,
     ]);
 
     return Scaffold(backgroundColor: Colors.black, body: scrollView);
@@ -46,25 +73,31 @@ class _SliverPersistentHeaderSampleState
 
 class CustomSliverPersistentHeaderDelegate
     extends SliverPersistentHeaderDelegate {
-  final double _expandedHeight = 300;
+  final double minHeight;
+  final double maxHeight;
+  final Widget child;
+
+  CustomSliverPersistentHeaderDelegate(
+      {this.minHeight, this.maxHeight, this.child});
+
   @override
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
     logd('shrinkOffset: $shrinkOffset, overlapsContent: $overlapsContent');
-    return Container(
-        height: _expandedHeight,
-        child: Image.network('https://www.gstatic.com/webp/gallery/1.jpg',
-            fit: BoxFit.cover));
+    return child;
   }
 
   @override
-  double get maxExtent => _expandedHeight;
+  double get maxExtent => minHeight < maxHeight ? maxHeight : minHeight;
 
   @override
-  double get minExtent => kToolbarHeight;
+  double get minExtent => minHeight;
 
   @override
-  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) {
-    return true;
+  bool shouldRebuild(
+      covariant CustomSliverPersistentHeaderDelegate oldDelegate) {
+    return maxHeight != oldDelegate.maxHeight ||
+        minHeight != oldDelegate.minHeight ||
+        child != oldDelegate.child;
   }
 }
