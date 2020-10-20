@@ -14,6 +14,7 @@ import 'package/samples/text_size.dart';
 import 'package/samples/toolset.dart';
 import 'technique/samples/flexible_space_bar_sample.dart';
 import 'technique/samples/sliver_grid_delegate_sample.dart';
+import 'technique/samples/sliver_tabbar_sample.dart';
 import 'technique/technique_list.dart';
 import 'widget/samples/grid_extent_sample.dart';
 import 'widget/samples/horizontal_list_sample.dart';
@@ -51,6 +52,8 @@ class ExampleApp extends StatelessWidget {
           SliverPersistentHeaderSample(),
       stringify(TechniqueSampleType.flexible_space_bar_sample): (_) =>
           FlexibleSpaceBarSample(),
+      stringify(TechniqueSampleType.sliver_tab_bar_sample): (_) =>
+          SliverTabBarSample(),
 
       /* Package List & Samples */
       stringify(SampleCategoryType.package): (_) => PackageList(),

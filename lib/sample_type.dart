@@ -12,6 +12,7 @@ enum TechniqueSampleType {
   sliver_grid_delegate_sample,
   sliver_persistent_header_sample,
   flexible_space_bar_sample,
+  sliver_tab_bar_sample
 }
 
 enum PackageSampleType {
