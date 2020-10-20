@@ -4,7 +4,8 @@ import 'package:flutter/widgets.dart';
 import '../sample_type.dart';
 
 class PatternList extends StatelessWidget {
-  final List<String> items = PatternSampleType.values.map((e) => stringify(e));
+  final List<String> items =
+      PatternSampleType.values.map((e) => stringify(e)).toList();
 
   @override
   Widget build(BuildContext context) {

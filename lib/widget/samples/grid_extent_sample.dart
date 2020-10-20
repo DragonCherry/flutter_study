@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:toolset/toolset.dart';
 
-class GridCountSample extends StatefulWidget {
+class GridExtentSample extends StatefulWidget {
   @override
-  _GridCountSampleState createState() => _GridCountSampleState();
+  _GridExtentSampleState createState() => _GridExtentSampleState();
 }
 
-class _GridCountSampleState extends State<GridCountSample> {
+class _GridExtentSampleState extends State<GridExtentSample> {
   final _items = <String>[];
 
   @override
@@ -19,13 +19,17 @@ class _GridCountSampleState extends State<GridCountSample> {
 
   @override
   Widget build(BuildContext context) {
-    final body = GridView.count(
-        crossAxisCount: 3,
+    final constrainedWidth = MediaQuery.of(context).size.width;
+
+    final body = GridView.extent(
+        maxCrossAxisExtent: constrainedWidth / 3,
+        childAspectRatio: 1,
         children: _items
             .enumerated((i, e) => Container(
                 color: Colors.primaries[i % Colors.primaries.length],
                 child: Center(child: Text(_items[i]))))
             .toList());
-    return Scaffold(appBar: AppBar(title: Text('GridCountSample')), body: body);
+    return Scaffold(
+        appBar: AppBar(title: Text('GridExtentSample')), body: body);
   }
 }

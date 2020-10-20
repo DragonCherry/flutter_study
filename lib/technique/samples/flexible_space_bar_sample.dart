@@ -1,12 +1,11 @@
-import 'package:examples/common/sliver_widget.dart';
 import 'package:flutter/material.dart';
 
-class SliverAppBarGridSample extends StatefulWidget {
+class FlexibleSpaceBarSample extends StatefulWidget {
   @override
-  _SliverAppBarGridSampleState createState() => _SliverAppBarGridSampleState();
+  _FlexibleSpaceBarSampleState createState() => _FlexibleSpaceBarSampleState();
 }
 
-class _SliverAppBarGridSampleState extends State<SliverAppBarGridSample> {
+class _FlexibleSpaceBarSampleState extends State<FlexibleSpaceBarSample> {
   final _items = <String>[];
   final _controller = ScrollController();
   final double _expandedHeight = 300;
@@ -23,13 +22,9 @@ class _SliverAppBarGridSampleState extends State<SliverAppBarGridSample> {
   @override
   Widget build(BuildContext context) {
     final sliverAppBar = SliverAppBar(
-        //backgroundColor: Colors.transparent,
+        backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: false,
-        title: SliverWidget(
-            child: Text('SliverAppBarGridSample'),
-            isFadeByPositionRatio: false,
-            visibility: SliverWidgetVisibility.visibleWhenCollapsed),
         expandedHeight: _expandedHeight,
         stretch: true,
         floating: true,
@@ -37,10 +32,7 @@ class _SliverAppBarGridSampleState extends State<SliverAppBarGridSample> {
         snap: false,
         flexibleSpace: FlexibleSpaceBar(
             centerTitle: false,
-            title: SliverWidget(
-                child: Text('SliverAppBarGridSample'),
-                isFadeByPositionRatio: true,
-                visibility: SliverWidgetVisibility.visibleWhenExpanded),
+            title: Text('${widget.runtimeType}'),
             background: Image.network(
                 'https://www.gstatic.com/webp/gallery/1.jpg',
                 fit: BoxFit.cover)));
