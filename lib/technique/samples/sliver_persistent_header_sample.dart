@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mini_log/mini_log.dart';
+import 'package:sliver_widget/sliver_widget.dart';
 import 'package:toolset/toolset.dart';
 
 class SliverPersistentHeaderSample extends StatefulWidget {
@@ -34,6 +35,28 @@ class _SliverPersistentHeaderSampleState
 
   @override
   Widget build(BuildContext context) {
+    final sliverAppBar = SliverAppBar(
+        elevation: 0,
+        centerTitle: false,
+        title: SliverWidget(
+            child: Text('${widget.runtimeType}'),
+            isFadeByPositionRatio: false,
+            visibility: SliverWidgetVisibility.visibleWhenCollapsed),
+        expandedHeight: 250,
+        stretch: true,
+        floating: true,
+        pinned: true,
+        snap: false,
+        flexibleSpace: FlexibleSpaceBar(
+            centerTitle: false,
+            title: SliverWidget(
+                child: Text('${widget.runtimeType}'),
+                isFadeByPositionRatio: false,
+                visibility: SliverWidgetVisibility.visibleWhenExpanded),
+            background: Image.network(
+                'https://www.gstatic.com/webp/gallery/1.jpg',
+                fit: BoxFit.cover)));
+
     final topView = SliverGrid.count(
         crossAxisCount: 3,
         children: _items
@@ -58,14 +81,17 @@ class _SliverPersistentHeaderSampleState
                 child: Center(child: Text(_items[i]))))
             .toList());
 
-    final scrollView = CustomScrollView(controller: _controller, slivers: [
-      createHeader('Top Header'),
-      topView,
-      createHeader('Middle Header'),
-      middleView,
-      createHeader('Bottom Header'),
-      bottomView,
-    ]);
+    final scrollView = Container(
+        color: Colors.white,
+        child: CustomScrollView(controller: _controller, slivers: [
+          sliverAppBar,
+          createHeader('Top Header'),
+          topView,
+          createHeader('Middle Header'),
+          middleView,
+          createHeader('Bottom Header'),
+          bottomView,
+        ]));
 
     return Scaffold(backgroundColor: Colors.black, body: scrollView);
   }
