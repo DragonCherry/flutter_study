@@ -26,6 +26,7 @@ class _GridCountSampleState extends State<GridCountSample> {
                 color: Colors.primaries[i % Colors.primaries.length],
                 child: Center(child: Text(_items[i]))))
             .toList());
-    return Scaffold(appBar: AppBar(title: Text('GridCountSample')), body: body);
+    return Scaffold(
+        appBar: AppBar(title: Text('${widget.runtimeType}')), body: body);
   }
 }

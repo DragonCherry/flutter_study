@@ -36,7 +36,7 @@ dependencies:
   # Pacakges to Provide Sample Code
   mini_log: ^0.5.1
   lru_image_cache: ^0.5.0
-  overlayer: ^0.5.0
+  overlayer: ^0.5.2
   toolset: ^0.5.7
   text_size: ^0.5.0
   sliver_widget: ^0.5.0

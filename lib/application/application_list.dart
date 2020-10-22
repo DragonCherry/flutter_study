@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class PackageList extends StatelessWidget {
-  final List<String> items = [
-    'toolset',
-    'text_size',
-    'overlayer',
-    'lru_image_cache',
-    'mini_log'
-  ];
+import '../sample_type.dart';
+
+class ApplicationList extends StatelessWidget {
+  final List<String> items =
+      ApplicationSampleType.values.map((e) => stringify(e)).toList();
 
   @override
   Widget build(BuildContext context) {

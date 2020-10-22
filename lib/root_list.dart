@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:toolset/toolset.dart';
 
+import 'sample_type.dart';
+
 class RootList extends StatelessWidget {
-  final List<String> categories = ['widget', 'technique', 'package', 'pattern'];
+  final List<String> categories =
+      SampleCategoryType.values.map((e) => stringify(e)).toList();
 
   @override
   Widget build(BuildContext context) {
