@@ -1,13 +1,42 @@
 enum SampleCategoryType { widget, application, pattern }
 
-enum WidgetSampleType {
+/* Widget Types */
+enum WidgetCategoryType {
+  structure,
+  button,
+  input,
+  modal,
+  display,
+  layout,
+}
+
+enum WidgetStructureType {
+  tbd,
+}
+
+enum WidgetButtonType {
+  tbd,
+}
+
+enum WidgetInputType {
+  slider_sample,
+}
+
+enum WidgetModalType {
+  calendar_picker_sample,
+}
+
+enum WidgetDisplayType {
   grid_count_sample,
   grid_extent_sample,
   horizontal_list_sample,
-  stack_sample,
-  slider_sample,
-  calendar_picker_sample,
 }
+
+enum WidgetLayoutType {
+  stack_sample,
+}
+
+/* Practice Types */
 
 enum ApplicationSampleType {
   sliver_basic_sample,

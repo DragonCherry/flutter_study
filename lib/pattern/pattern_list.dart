@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import '../sample_type.dart';
+import '../sample_types.dart';
 
 class PatternList extends StatelessWidget {
   final List<String> items =

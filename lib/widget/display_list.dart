@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import '../sample_type.dart';
+import '../sample_types.dart';
 
-class WidgetList extends StatelessWidget {
+class WidgetDisplayList extends StatelessWidget {
   final List<String> items =
-      WidgetSampleType.values.map((e) => stringify(e)).toList();
+      WidgetDisplayType.values.map((e) => stringify(e)).toList();
 
   @override
   Widget build(BuildContext context) {

@@ -1,7 +1,8 @@
+import 'package:examples/common/under_development.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-import 'sample_type.dart';
+import 'sample_types.dart';
 import 'root_list.dart';
 
 import 'pattern/pattern_list.dart';
@@ -16,7 +17,13 @@ import 'application/samples/sliver_grid_sample.dart';
 import 'application/samples/sliver_basic_sample.dart';
 import 'application/samples/sliver_persistent_header_sample.dart';
 
-import 'widget/widget_list.dart';
+import 'widget/button_list.dart';
+import 'widget/display_list.dart';
+import 'widget/input_list.dart';
+import 'widget/layout_list.dart';
+import 'widget/modal_list.dart';
+import 'widget/structure_list.dart';
+import 'widget/widget_category_list.dart';
 import 'widget/samples/grid_count_sample.dart';
 import 'widget/samples/grid_extent_sample.dart';
 import 'widget/samples/horizontal_list_sample.dart';
@@ -36,16 +43,34 @@ class ExampleApp extends StatelessWidget {
       'root': (_) => RootList(),
 
       /* Widget List */
-      stringify(SampleCategoryType.widget): (_) => WidgetList(),
+      stringify(SampleCategoryType.widget): (_) => WidgetCategoryList(),
+
+      /* Widget Category List */
+      stringify(WidgetCategoryType.structure): (_) => WidgetStructureList(),
+      stringify(WidgetCategoryType.button): (_) => WidgetButtonList(),
+      stringify(WidgetCategoryType.input): (_) => WidgetInputList(),
+      stringify(WidgetCategoryType.modal): (_) => WidgetModalList(),
+      stringify(WidgetCategoryType.display): (_) => WidgetDisplayList(),
+      stringify(WidgetCategoryType.layout): (_) => WidgetLayoutList(),
+
       /* Widget Samples */
-      stringify(WidgetSampleType.grid_count_sample): (_) => GridCountSample(),
-      stringify(WidgetSampleType.grid_extent_sample): (_) => GridExtentSample(),
-      stringify(WidgetSampleType.horizontal_list_sample): (_) =>
-          HorizontalListSample(),
-      stringify(WidgetSampleType.stack_sample): (_) => StackSample(),
-      stringify(WidgetSampleType.slider_sample): (_) => SliderSample(),
-      stringify(WidgetSampleType.calendar_picker_sample): (_) =>
+      // Structure
+      stringify(WidgetStructureType.tbd): (_) => UnderDevelopmentWidget(),
+      // Button
+      stringify(WidgetButtonType.tbd): (_) => UnderDevelopmentWidget(),
+      // Input
+      stringify(WidgetInputType.slider_sample): (_) => SliderSample(),
+      // Modal
+      stringify(WidgetModalType.calendar_picker_sample): (_) =>
           CalendarPickerSample(),
+      // Display
+      stringify(WidgetDisplayType.grid_count_sample): (_) => GridCountSample(),
+      stringify(WidgetDisplayType.grid_extent_sample): (_) =>
+          GridExtentSample(),
+      stringify(WidgetDisplayType.horizontal_list_sample): (_) =>
+          HorizontalListSample(),
+      // Layout
+      stringify(WidgetLayoutType.stack_sample): (_) => StackSample(),
 
       /* Technique List */
       stringify(SampleCategoryType.application): (_) => ApplicationList(),

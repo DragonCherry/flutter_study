@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:toolset/toolset.dart';
 
-import 'sample_type.dart';
+import 'sample_types.dart';
 
 class RootList extends StatelessWidget {
   final List<String> categories =
@@ -11,7 +11,7 @@ class RootList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Flutter Master Example',
+          title: Text('Flutter Practices',
               style: Theme.of(context).textTheme.headline5),
         ),
         body: Column(

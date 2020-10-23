@@ -3,9 +3,9 @@ import 'package:flutter/widgets.dart';
 
 import '../sample_types.dart';
 
-class ApplicationList extends StatelessWidget {
+class WidgetInputList extends StatelessWidget {
   final List<String> items =
-      ApplicationSampleType.values.map((e) => stringify(e)).toList();
+      WidgetInputType.values.map((e) => stringify(e)).toList();
 
   @override
   Widget build(BuildContext context) {
