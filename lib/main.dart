@@ -66,7 +66,8 @@ class ExampleApp extends StatelessWidget {
       stringify(WidgetButtonType.tbd): (_) => developmentWidget,
       // Input
       stringify(WidgetInputType.slider_sample): (_) => SliderSample(),
-      stringify(WidgetInputType.slider_sample): (_) => CalendarPickerSample(),
+      stringify(WidgetInputType.calendar_picker_sample): (_) =>
+          CalendarPickerSample(),
       // Modal
       stringify(WidgetModalType.alert_dialog_sample): (_) =>
           AlertDialogSample(),
