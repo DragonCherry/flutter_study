@@ -20,10 +20,12 @@ enum WidgetButtonType {
 
 enum WidgetInputType {
   slider_sample,
+  calendar_picker_sample,
 }
 
 enum WidgetModalType {
-  calendar_picker_sample,
+  alert_dialog_sample,
+  bottom_sheet_sample,
 }
 
 enum WidgetDisplayType {

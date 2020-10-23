@@ -21,15 +21,17 @@ import 'widget/button_list.dart';
 import 'widget/display_list.dart';
 import 'widget/input_list.dart';
 import 'widget/layout_list.dart';
+import 'widget/modal/alert_dialog_sample.dart';
+import 'widget/modal/bottom_sheet_sample.dart';
 import 'widget/modal_list.dart';
 import 'widget/structure_list.dart';
 import 'widget/widget_category_list.dart';
-import 'widget/samples/grid_count_sample.dart';
-import 'widget/samples/grid_extent_sample.dart';
-import 'widget/samples/horizontal_list_sample.dart';
-import 'widget/samples/stack_sample.dart';
-import 'widget/samples/slider_sample.dart';
-import 'widget/samples/calendar_picker_sample.dart';
+import 'widget/display/grid_count_sample.dart';
+import 'widget/display/grid_extent_sample.dart';
+import 'widget/display/horizontal_list_sample.dart';
+import 'widget/layout/stack_sample.dart';
+import 'widget/input/slider_sample.dart';
+import 'widget/input/calendar_picker_sample.dart';
 
 void main() {
   //debugPaintSizeEnabled = true;
@@ -37,6 +39,10 @@ void main() {
 }
 
 class ExampleApp extends StatelessWidget {
+  UnderDevelopmentWidget get developmentWidget {
+    return UnderDevelopmentWidget();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(initialRoute: 'root', routes: {
@@ -55,14 +61,17 @@ class ExampleApp extends StatelessWidget {
 
       /* Widget Samples */
       // Structure
-      stringify(WidgetStructureType.tbd): (_) => UnderDevelopmentWidget(),
+      stringify(WidgetStructureType.tbd): (_) => developmentWidget,
       // Button
-      stringify(WidgetButtonType.tbd): (_) => UnderDevelopmentWidget(),
+      stringify(WidgetButtonType.tbd): (_) => developmentWidget,
       // Input
       stringify(WidgetInputType.slider_sample): (_) => SliderSample(),
+      stringify(WidgetInputType.slider_sample): (_) => CalendarPickerSample(),
       // Modal
-      stringify(WidgetModalType.calendar_picker_sample): (_) =>
-          CalendarPickerSample(),
+      stringify(WidgetModalType.alert_dialog_sample): (_) =>
+          AlertDialogSample(),
+      stringify(WidgetModalType.bottom_sheet_sample): (_) =>
+          BottomSheetSample(),
       // Display
       stringify(WidgetDisplayType.grid_count_sample): (_) => GridCountSample(),
       stringify(WidgetDisplayType.grid_extent_sample): (_) =>
