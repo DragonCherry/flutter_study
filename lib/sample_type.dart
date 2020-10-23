@@ -4,7 +4,9 @@ enum WidgetSampleType {
   grid_count_sample,
   grid_extent_sample,
   horizontal_list_sample,
-  stack_sample
+  stack_sample,
+  slider_sample,
+  calendar_picker_sample,
 }
 
 enum ApplicationSampleType {
