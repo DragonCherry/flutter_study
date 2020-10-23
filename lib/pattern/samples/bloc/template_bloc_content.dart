@@ -52,7 +52,7 @@ class _TemplateBlocContentState extends State<TemplateBlocContent> {
         children.add(placeholder);
       }
 
-      children.add(RaisedButton(
+      children.add(ElevatedButton(
           child: Text('Fetch Image'),
           onPressed: () {
             _bloc.add(TemplateEventStartFetch(url));

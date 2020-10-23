@@ -20,7 +20,7 @@ class _CalendarPickerSampleState extends State<CalendarPickerSample> {
             date == null
                 ? Text('Select date from picker.')
                 : Text('Picked Date: ${dateString(date)}'),
-            RaisedButton(
+            ElevatedButton(
                 child: Text('Date Picker'),
                 onPressed: () {
                   showDatePicker(
@@ -38,7 +38,7 @@ class _CalendarPickerSampleState extends State<CalendarPickerSample> {
                 ? Text('Select date range from picker.')
                 : Text(
                     'Picked Date Range: ${dateString(dateRange.start)} ~ ${dateString(dateRange.end)}'),
-            RaisedButton(
+            ElevatedButton(
                 child: Text('Date Range Picker'),
                 onPressed: () {
                   showDateRangePicker(
