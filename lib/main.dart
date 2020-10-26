@@ -16,6 +16,7 @@ import 'application/samples/sliver_grid_sample.dart';
 import 'application/samples/sliver_basic_sample.dart';
 import 'application/samples/sliver_persistent_header_sample.dart';
 
+import 'widget/button/button_bar_sample.dart';
 import 'widget/widget_category_list.dart';
 
 import 'widget/structure_list.dart';
@@ -76,7 +77,7 @@ class ExampleApp extends StatelessWidget {
       stringify(WidgetStructureType.drawer_sample): (_) => DrawerSample(),
       stringify(WidgetStructureType.tab_bar_sample): (_) => TabBarSample(),
       // Button
-      stringify(WidgetButtonType.tbd): (_) => developmentWidget,
+      stringify(WidgetButtonType.button_bar_sample): (_) => ButtonBarSample(),
       // Input
       stringify(WidgetInputType.slider_sample): (_) => SliderSample(),
       stringify(WidgetInputType.calendar_picker_sample): (_) =>

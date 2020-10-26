@@ -17,7 +17,7 @@ enum WidgetStructureType {
 }
 
 enum WidgetButtonType {
-  tbd,
+  button_bar_sample,
 }
 
 enum WidgetInputType {
