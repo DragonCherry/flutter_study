@@ -11,7 +11,9 @@ enum WidgetCategoryType {
 }
 
 enum WidgetStructureType {
+  bottom_navigation_bar_sample,
   drawer_sample,
+  tab_bar_sample,
 }
 
 enum WidgetButtonType {

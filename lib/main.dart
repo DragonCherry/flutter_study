@@ -1,6 +1,5 @@
 import 'package:examples/common/under_development.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 import 'sample_types.dart';
 import 'root_list.dart';
@@ -17,23 +16,32 @@ import 'application/samples/sliver_grid_sample.dart';
 import 'application/samples/sliver_basic_sample.dart';
 import 'application/samples/sliver_persistent_header_sample.dart';
 
+import 'widget/widget_category_list.dart';
+
+import 'widget/structure_list.dart';
+import 'widget/structure/bottom_navigation_bar_sample.dart';
+import 'widget/structure/drawer_sample.dart';
+import 'widget/structure/tab_bar_sample.dart';
+
 import 'widget/button_list.dart';
-import 'widget/display_list.dart';
+
 import 'widget/input_list.dart';
-import 'widget/layout/align_sample.dart';
-import 'widget/layout_list.dart';
+import 'widget/input/slider_sample.dart';
+import 'widget/input/calendar_picker_sample.dart';
+
+import 'widget/modal_list.dart';
 import 'widget/modal/alert_dialog_sample.dart';
 import 'widget/modal/bottom_sheet_sample.dart';
-import 'widget/modal_list.dart';
-import 'widget/structure/drawer_sample.dart';
-import 'widget/structure_list.dart';
-import 'widget/widget_category_list.dart';
+
+import 'widget/display_list.dart';
 import 'widget/display/grid_count_sample.dart';
 import 'widget/display/grid_extent_sample.dart';
 import 'widget/display/horizontal_list_sample.dart';
+
+import 'widget/layout_list.dart';
+import 'widget/layout/align_sample.dart';
+
 import 'widget/layout/stack_sample.dart';
-import 'widget/input/slider_sample.dart';
-import 'widget/input/calendar_picker_sample.dart';
 
 void main() {
   //debugPaintSizeEnabled = true;
@@ -63,7 +71,10 @@ class ExampleApp extends StatelessWidget {
 
       /* Widget Samples */
       // Structure
+      stringify(WidgetStructureType.bottom_navigation_bar_sample): (_) =>
+          BottomNavigationBarSample(),
       stringify(WidgetStructureType.drawer_sample): (_) => DrawerSample(),
+      stringify(WidgetStructureType.tab_bar_sample): (_) => TabBarSample(),
       // Button
       stringify(WidgetButtonType.tbd): (_) => developmentWidget,
       // Input
