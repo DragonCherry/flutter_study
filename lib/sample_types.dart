@@ -11,7 +11,7 @@ enum WidgetCategoryType {
 }
 
 enum WidgetStructureType {
-  tbd,
+  drawer_sample,
 }
 
 enum WidgetButtonType {
@@ -36,6 +36,7 @@ enum WidgetDisplayType {
 
 enum WidgetLayoutType {
   stack_sample,
+  align_sample,
 }
 
 /* Practice Types */

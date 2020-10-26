@@ -20,10 +20,12 @@ import 'application/samples/sliver_persistent_header_sample.dart';
 import 'widget/button_list.dart';
 import 'widget/display_list.dart';
 import 'widget/input_list.dart';
+import 'widget/layout/align_sample.dart';
 import 'widget/layout_list.dart';
 import 'widget/modal/alert_dialog_sample.dart';
 import 'widget/modal/bottom_sheet_sample.dart';
 import 'widget/modal_list.dart';
+import 'widget/structure/drawer_sample.dart';
 import 'widget/structure_list.dart';
 import 'widget/widget_category_list.dart';
 import 'widget/display/grid_count_sample.dart';
@@ -61,7 +63,7 @@ class ExampleApp extends StatelessWidget {
 
       /* Widget Samples */
       // Structure
-      stringify(WidgetStructureType.tbd): (_) => developmentWidget,
+      stringify(WidgetStructureType.drawer_sample): (_) => DrawerSample(),
       // Button
       stringify(WidgetButtonType.tbd): (_) => developmentWidget,
       // Input
@@ -81,6 +83,7 @@ class ExampleApp extends StatelessWidget {
           HorizontalListSample(),
       // Layout
       stringify(WidgetLayoutType.stack_sample): (_) => StackSample(),
+      stringify(WidgetLayoutType.align_sample): (_) => AlignSample(),
 
       /* Technique List */
       stringify(SampleCategoryType.application): (_) => ApplicationList(),
