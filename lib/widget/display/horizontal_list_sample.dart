@@ -24,9 +24,15 @@ class _HorizontalListSampleState extends State<HorizontalListSample> {
 
   @override
   Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(title: Text('HorizontalListSample')),
+        body: Container(height: 200, child: createWidget(context)));
+  }
+
+  Widget createWidget(final BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     final edge = (width * 0.1).toInt().toDouble();
-    final listView = ListView.builder(
+    return ListView.builder(
         controller: _controller,
         scrollDirection: Axis.horizontal,
         padding: EdgeInsets.fromLTRB(edge, 0, edge, 0),
@@ -37,8 +43,5 @@ class _HorizontalListSampleState extends State<HorizontalListSample> {
               color: Colors.primaries[index % Colors.primaries.length],
               child: Center(child: Text(_items[index])));
         });
-    return Scaffold(
-        appBar: AppBar(title: Text('HorizontalListSample')),
-        body: Container(height: 200, child: listView));
   }
 }

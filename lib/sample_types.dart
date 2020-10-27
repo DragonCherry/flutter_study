@@ -18,6 +18,9 @@ enum WidgetStructureType {
 
 enum WidgetButtonType {
   button_bar_sample,
+  dropdown_button_sample,
+  outline_button_sample,
+  popup_menu_button_sample,
 }
 
 enum WidgetInputType {

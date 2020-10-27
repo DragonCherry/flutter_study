@@ -19,9 +19,14 @@ class _GridExtentSampleState extends State<GridExtentSample> {
 
   @override
   Widget build(BuildContext context) {
-    final constrainedWidth = MediaQuery.of(context).size.width;
+    return Scaffold(
+        appBar: AppBar(title: Text('GridExtentSample')),
+        body: createWidget(context));
+  }
 
-    final body = GridView.extent(
+  Widget createWidget(final BuildContext context) {
+    final constrainedWidth = MediaQuery.of(context).size.width;
+    return GridView.extent(
         maxCrossAxisExtent: constrainedWidth / 3,
         childAspectRatio: 1,
         children: _items
@@ -29,7 +34,5 @@ class _GridExtentSampleState extends State<GridExtentSample> {
                 color: Colors.primaries[i % Colors.primaries.length],
                 child: Center(child: Text(_items[i]))))
             .toList());
-    return Scaffold(
-        appBar: AppBar(title: Text('GridExtentSample')), body: body);
   }
 }

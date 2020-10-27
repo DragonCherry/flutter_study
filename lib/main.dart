@@ -1,4 +1,5 @@
 import 'package:examples/common/under_development.dart';
+import 'package:examples/widget/button/outline_button_sample.dart';
 import 'package:flutter/material.dart';
 
 import 'sample_types.dart';
@@ -16,8 +17,11 @@ import 'application/samples/sliver_grid_sample.dart';
 import 'application/samples/sliver_basic_sample.dart';
 import 'application/samples/sliver_persistent_header_sample.dart';
 
-import 'widget/button/button_bar_sample.dart';
 import 'widget/widget_category_list.dart';
+
+import 'widget/button/button_bar_sample.dart';
+import 'widget/button/dropdown_button_sample.dart';
+import 'widget/button/popup_menu_button_sample.dart';
 
 import 'widget/structure_list.dart';
 import 'widget/structure/bottom_navigation_bar_sample.dart';
@@ -78,6 +82,12 @@ class ExampleApp extends StatelessWidget {
       stringify(WidgetStructureType.tab_bar_sample): (_) => TabBarSample(),
       // Button
       stringify(WidgetButtonType.button_bar_sample): (_) => ButtonBarSample(),
+      stringify(WidgetButtonType.dropdown_button_sample): (_) =>
+          DropdownButtonSample(),
+      stringify(WidgetButtonType.outline_button_sample): (_) =>
+          OutlineButtonSample(),
+      stringify(WidgetButtonType.popup_menu_button_sample): (_) =>
+          PopupMenuButtonSample(),
       // Input
       stringify(WidgetInputType.slider_sample): (_) => SliderSample(),
       stringify(WidgetInputType.calendar_picker_sample): (_) =>

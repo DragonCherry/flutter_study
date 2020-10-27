@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class TemplateForSample extends StatefulWidget {
+class OutlineButtonSample extends StatefulWidget {
   @override
-  _TemplateForSampleState createState() => _TemplateForSampleState();
+  _OutlineButtonSampleState createState() => _OutlineButtonSampleState();
 }
 
-class _TemplateForSampleState extends State<TemplateForSample> {
+class _OutlineButtonSampleState extends State<OutlineButtonSample> {
   String _value;
   @override
   void initState() {
@@ -21,21 +21,22 @@ class _TemplateForSampleState extends State<TemplateForSample> {
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           _value == null ? Text('Do action.') : Text('Action result: $_value'),
           SizedBox(height: 10),
-          createWidget(context)
+          createWidget(context),
         ])));
   }
 
   Widget createWidget(final BuildContext context) {
-    return ElevatedButton(
+    return OutlineButton(
         child: Text('Show simple dialog'),
+        onLongPress: () {
+          setState(() {
+            _value = 'Long pressed!';
+          });
+        },
         onPressed: () {
-          action('Did something.');
+          setState(() {
+            _value = 'Pressed!';
+          });
         });
-  }
-
-  void action(final String value) {
-    setState(() {
-      _value = value;
-    });
   }
 }

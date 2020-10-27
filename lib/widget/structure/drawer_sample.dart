@@ -6,7 +6,6 @@ class DrawerSample extends StatefulWidget {
 }
 
 class _DrawerSampleState extends State<DrawerSample> {
-  String _value;
   @override
   void initState() {
     super.initState();
@@ -54,11 +53,5 @@ class _DrawerSampleState extends State<DrawerSample> {
         drawer: _createFloatingHeaderDrawer(),
         endDrawer: _createPinnedHeaderDrawer(),
         body: null);
-  }
-
-  void action() {
-    setState(() {
-      _value = 'Did something.';
-    });
   }
 }

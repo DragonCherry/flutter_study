@@ -20,19 +20,21 @@ class _SliderSampleState extends State<SliderSample> {
         appBar: AppBar(title: Text('${widget.runtimeType}')),
         body: Center(
             child: Container(
-                width: width,
-                height: 50,
-                child: Slider(
-                  value: _currentSliderValue,
-                  min: 0,
-                  max: 1000,
-                  divisions: 1000,
-                  label: _currentSliderValue.round().toString(),
-                  onChanged: (double value) {
-                    setState(() {
-                      _currentSliderValue = value;
-                    });
-                  },
-                ))));
+                width: width, height: 50, child: createWidget(context))));
+  }
+
+  Widget createWidget(final BuildContext context) {
+    return Slider(
+      value: _currentSliderValue,
+      min: 0,
+      max: 1000,
+      divisions: 1000,
+      label: _currentSliderValue.round().toString(),
+      onChanged: (double value) {
+        setState(() {
+          _currentSliderValue = value;
+        });
+      },
+    );
   }
 }

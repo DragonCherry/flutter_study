@@ -29,36 +29,40 @@ class _ButtonBarSampleState extends State<ButtonBarSample> {
                 title: Text('Title on card.'),
                 subtitle: Text('Subtitle on card.'),
               ),
-              ButtonBar(children: [
-                TextButton(
-                  child: Text('Option 1'),
-                  onPressed: () {
-                    setState(() {
-                      _value = 'Option 1';
-                    });
-                  },
-                ),
-                TextButton(
-                  child: Text('Option 2'),
-                  onPressed: () {
-                    setState(() {
-                      _value = 'Option 2';
-                    });
-                  },
-                ),
-                TextButton(
-                  child: Text('Option 3'),
-                  onPressed: () {
-                    setState(() {
-                      _value = 'Option 3';
-                    });
-                  },
-                ),
-              ])
+              createWidget(context)
             ],
           )))
     ]));
     return Scaffold(
         appBar: AppBar(title: Text('${widget.runtimeType}')), body: body);
+  }
+
+  Widget createWidget(final BuildContext context) {
+    return ButtonBar(children: [
+      TextButton(
+        child: Text('Option 1'),
+        onPressed: () {
+          setState(() {
+            _value = 'Option 1';
+          });
+        },
+      ),
+      TextButton(
+        child: Text('Option 2'),
+        onPressed: () {
+          setState(() {
+            _value = 'Option 2';
+          });
+        },
+      ),
+      TextButton(
+        child: Text('Option 3'),
+        onPressed: () {
+          setState(() {
+            _value = 'Option 3';
+          });
+        },
+      ),
+    ]);
   }
 }

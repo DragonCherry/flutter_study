@@ -19,14 +19,18 @@ class _GridCountSampleState extends State<GridCountSample> {
 
   @override
   Widget build(BuildContext context) {
-    final body = GridView.count(
+    return Scaffold(
+        appBar: AppBar(title: Text('${widget.runtimeType}')),
+        body: createWidget(context));
+  }
+
+  Widget createWidget(final BuildContext context) {
+    return GridView.count(
         crossAxisCount: 3,
         children: _items
             .enumerated((i, e) => Container(
                 color: Colors.primaries[i % Colors.primaries.length],
                 child: Center(child: Text(_items[i]))))
             .toList());
-    return Scaffold(
-        appBar: AppBar(title: Text('${widget.runtimeType}')), body: body);
   }
 }
