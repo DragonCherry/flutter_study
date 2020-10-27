@@ -24,8 +24,10 @@ enum WidgetButtonType {
 }
 
 enum WidgetInputType {
-  slider_sample,
   calendar_picker_sample,
+  checkbox_sample,
+  radio_sample,
+  slider_sample,
 }
 
 enum WidgetModalType {

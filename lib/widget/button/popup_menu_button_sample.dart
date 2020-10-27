@@ -1,3 +1,4 @@
+import 'package:examples/common/output_text.dart';
 import 'package:flutter/material.dart';
 
 class PopupMenuButtonSample extends StatefulWidget {
@@ -27,7 +28,9 @@ class _PopupMenuButtonSampleState extends State<PopupMenuButtonSample> {
         body: Center(
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          _value == null ? Text('Do action.') : Text('Action result: $_value'),
+          _value == null
+              ? OutputText('Do action.')
+              : OutputText('Action result: $_value'),
         ])));
   }
 

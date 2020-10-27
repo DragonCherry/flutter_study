@@ -1,3 +1,4 @@
+import 'package:examples/common/output_text.dart';
 import 'package:flutter/material.dart';
 
 class OutlineButtonSample extends StatefulWidget {
@@ -19,7 +20,9 @@ class _OutlineButtonSampleState extends State<OutlineButtonSample> {
         body: Center(
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          _value == null ? Text('Do action.') : Text('Action result: $_value'),
+          _value == null
+              ? OutputText('Do action.')
+              : OutputText('Action result: $_value'),
           SizedBox(height: 10),
           createWidget(context),
         ])));
@@ -27,7 +30,7 @@ class _OutlineButtonSampleState extends State<OutlineButtonSample> {
 
   Widget createWidget(final BuildContext context) {
     return OutlineButton(
-        child: Text('Show simple dialog'),
+        child: Text('Press or long-press this button.'),
         onLongPress: () {
           setState(() {
             _value = 'Long pressed!';

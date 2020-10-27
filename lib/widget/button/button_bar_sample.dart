@@ -1,3 +1,4 @@
+import 'package:examples/common/output_text.dart';
 import 'package:flutter/material.dart';
 
 class ButtonBarSample extends StatefulWidget {
@@ -16,7 +17,8 @@ class _ButtonBarSampleState extends State<ButtonBarSample> {
   Widget build(BuildContext context) {
     final body = Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-      Text(_value == null ? 'Touch button on card.' : 'Touched \'$_value\''),
+      OutputText(
+          _value == null ? 'Touch button on card.' : 'Touched \'$_value\''),
       FractionallySizedBox(
           widthFactor: 0.8,
           child: Card(

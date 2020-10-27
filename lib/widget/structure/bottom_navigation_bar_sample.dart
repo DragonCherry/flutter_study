@@ -9,8 +9,6 @@ class BottomNavigationBarSample extends StatefulWidget {
 
 class _BottomNavigationBarSampleState extends State<BottomNavigationBarSample>
     with SingleTickerProviderStateMixin {
-  TabController _controller;
-
   final int _tabCount = 5;
   final _tabs = [];
   int _index = 0;
@@ -23,7 +21,6 @@ class _BottomNavigationBarSampleState extends State<BottomNavigationBarSample>
       _tabs.add('Tab $i');
       _values.add(0);
     }
-    _controller = TabController(length: _tabs.length, vsync: this);
   }
 
   @override
