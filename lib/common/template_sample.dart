@@ -21,21 +21,17 @@ class _TemplateForSampleState extends State<TemplateForSample> {
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           _value == null ? Text('Do action.') : Text('Action result: $_value'),
           SizedBox(height: 10),
-          createWidget(context)
+          createSample(context)
         ])));
   }
 
-  Widget createWidget(final BuildContext context) {
+  Widget createSample(final BuildContext context) {
     return ElevatedButton(
         child: Text('Show simple dialog'),
         onPressed: () {
-          action('Did something.');
+          setState(() {
+            _value = 'Changed!';
+          });
         });
-  }
-
-  void action(final String value) {
-    setState(() {
-      _value = value;
-    });
   }
 }

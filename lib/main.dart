@@ -19,6 +19,7 @@ import 'application/samples/sliver_persistent_header_sample.dart';
 
 import 'widget/input/text_field_sample.dart';
 import 'widget/modal/expansion_panel_sample.dart';
+import 'widget/modal/snack_bar_sample.dart';
 import 'widget/widget_category_list.dart';
 
 import 'widget/button_list.dart';
@@ -108,6 +109,7 @@ class ExampleApp extends StatelessWidget {
           BottomSheetSample(),
       stringify(WidgetModalType.expansion_panel_sample): (_) =>
           ExpansionPanelSample(),
+      stringify(WidgetModalType.snack_bar_sample): (_) => SnackBarSample(),
 
       // Display
       stringify(WidgetDisplayType.grid_count_sample): (_) => GridCountSample(),

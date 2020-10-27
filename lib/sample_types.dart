@@ -35,6 +35,7 @@ enum WidgetModalType {
   alert_dialog_sample,
   bottom_sheet_sample,
   expansion_panel_sample,
+  snack_bar_sample,
 }
 
 enum WidgetDisplayType {
