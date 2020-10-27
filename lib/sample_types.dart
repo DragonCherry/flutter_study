@@ -28,11 +28,13 @@ enum WidgetInputType {
   checkbox_sample,
   radio_sample,
   slider_sample,
+  text_field_sample,
 }
 
 enum WidgetModalType {
   alert_dialog_sample,
   bottom_sheet_sample,
+  expansion_panel_sample,
 }
 
 enum WidgetDisplayType {

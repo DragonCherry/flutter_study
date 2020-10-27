@@ -17,6 +17,8 @@ import 'application/samples/sliver_grid_sample.dart';
 import 'application/samples/sliver_basic_sample.dart';
 import 'application/samples/sliver_persistent_header_sample.dart';
 
+import 'widget/input/text_field_sample.dart';
+import 'widget/modal/expansion_panel_sample.dart';
 import 'widget/widget_category_list.dart';
 
 import 'widget/button_list.dart';
@@ -97,12 +99,15 @@ class ExampleApp extends StatelessWidget {
       stringify(WidgetInputType.checkbox_sample): (_) => CheckboxSample(),
       stringify(WidgetInputType.radio_sample): (_) => RadioSample(),
       stringify(WidgetInputType.slider_sample): (_) => SliderSample(),
+      stringify(WidgetInputType.text_field_sample): (_) => TextFieldSample(),
 
       // Modal
       stringify(WidgetModalType.alert_dialog_sample): (_) =>
           AlertDialogSample(),
       stringify(WidgetModalType.bottom_sheet_sample): (_) =>
           BottomSheetSample(),
+      stringify(WidgetModalType.expansion_panel_sample): (_) =>
+          ExpansionPanelSample(),
 
       // Display
       stringify(WidgetDisplayType.grid_count_sample): (_) => GridCountSample(),
