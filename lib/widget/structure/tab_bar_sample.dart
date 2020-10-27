@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:toolset/toolset.dart';
 
 class TabBarSample extends StatefulWidget {
   @override
@@ -25,7 +26,11 @@ class _TabBarSampleState extends State<TabBarSample>
         tabs: _tabs.map((e) => Text(e)).toList(),
         controller: _controller,
         indicatorColor: Colors.pink);
-    final contentViews = _tabs.map((e) => Center(child: Text(e))).toList();
+    final contentViews = _tabs
+        .enumerated((i, e) => Container(
+            color: Colors.primaries[i % Colors.primaries.length].shade200,
+            child: Center(child: Text(e))))
+        .toList();
 
     return Scaffold(
         appBar: AppBar(title: Text('${widget.runtimeType}')),
