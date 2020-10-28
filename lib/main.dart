@@ -1,5 +1,4 @@
 import 'package:examples/common/under_development.dart';
-import 'package:examples/widget/button/outline_button_sample.dart';
 import 'package:flutter/material.dart';
 
 import 'sample_types.dart';
@@ -17,14 +16,12 @@ import 'application/samples/sliver_grid_sample.dart';
 import 'application/samples/sliver_basic_sample.dart';
 import 'application/samples/sliver_persistent_header_sample.dart';
 
-import 'widget/input/text_field_sample.dart';
-import 'widget/modal/expansion_panel_sample.dart';
-import 'widget/modal/snack_bar_sample.dart';
 import 'widget/widget_category_list.dart';
 
 import 'widget/button_list.dart';
 import 'widget/button/button_bar_sample.dart';
 import 'widget/button/dropdown_button_sample.dart';
+import 'widget/button/outline_button_sample.dart';
 import 'widget/button/popup_menu_button_sample.dart';
 
 import 'widget/structure_list.dart';
@@ -37,19 +34,24 @@ import 'widget/input/calendar_picker_sample.dart';
 import 'widget/input/checkbox_sample.dart';
 import 'widget/input/radio_sample.dart';
 import 'widget/input/slider_sample.dart';
+import 'widget/input/text_field_sample.dart';
 
 import 'widget/modal_list.dart';
 import 'widget/modal/alert_dialog_sample.dart';
 import 'widget/modal/bottom_sheet_sample.dart';
+import 'widget/modal/expansion_panel_sample.dart';
+import 'widget/modal/snack_bar_sample.dart';
 
 import 'widget/display_list.dart';
 import 'widget/display/grid_count_sample.dart';
 import 'widget/display/grid_extent_sample.dart';
 import 'widget/display/horizontal_list_sample.dart';
+import 'widget/display/linear_progress_indicator_sample.dart';
 
 import 'widget/layout_list.dart';
 import 'widget/layout/align_sample.dart';
 import 'widget/layout/stack_sample.dart';
+import 'widget/layout/stepper_sample.dart';
 
 void main() {
   //debugPaintSizeEnabled = true;
@@ -117,10 +119,13 @@ class ExampleApp extends StatelessWidget {
           GridExtentSample(),
       stringify(WidgetDisplayType.horizontal_list_sample): (_) =>
           HorizontalListSample(),
+      stringify(WidgetDisplayType.linear_progress_indicator_sample): (_) =>
+          LinearProgressIndicatorSample(),
 
       // Layout
       stringify(WidgetLayoutType.stack_sample): (_) => StackSample(),
       stringify(WidgetLayoutType.align_sample): (_) => AlignSample(),
+      stringify(WidgetLayoutType.stepper_sample): (_) => StepperSample(),
 
       /* Technique List */
       stringify(SampleCategoryType.application): (_) => ApplicationList(),

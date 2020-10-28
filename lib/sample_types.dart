@@ -42,11 +42,13 @@ enum WidgetDisplayType {
   grid_count_sample,
   grid_extent_sample,
   horizontal_list_sample,
+  linear_progress_indicator_sample,
 }
 
 enum WidgetLayoutType {
   stack_sample,
   align_sample,
+  stepper_sample,
 }
 
 /* Practice Types */
